@@ -6,3 +6,4 @@ To be completed
 3. flask whatever is done- blog for it
 4. reserach paper and internship details
 5. find a blog
+6. flask blueprints
