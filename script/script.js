@@ -1,5 +1,5 @@
 var i = 0;
-var txt = 'I want to work with the maximum potential in a dynamic and challenging environment to touch the zenith of career';
+var txt = 'An aspiring data scientist and software developer , preferably working with startups !'
 var speed = 50;
 
 function typeWriter() {
