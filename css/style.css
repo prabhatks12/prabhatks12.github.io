@@ -1,19 +1,19 @@
 .body_style{
-background: #202020	;
-border-radius: 0px 0px 200px 0px;
-
+  background: #202020	;
+  border-radius: 0px 0px 200px 0px;
 }
 
 .intro_text{
-    margin-top: 10%;
-    font-family: Impact;
-    color:#ff6b00;
-    font-size:60px;
+  margin-top: 10%;
+  font-family: Impact;
+  color:#ff6b00;
+  font-size:60px;
 }
+
 .normal_text{
-    font-family: "FreeMono";
-    color: white;
-    font-size:20px;
+  font-family: "FreeMono";
+  color: white;
+  font-size:20px;
 }
 
 .button_round {
@@ -29,18 +29,21 @@ border-radius: 0px 0px 200px 0px;
     color: black;
 }
 
-.button_round2 {
-  border-radius: 15px 50px 30px;
-  padding: 10px;
-  width: 150px;
-  height: 150px;
-  border-color: white;
-  border: 2px solid white;
-  background: #202020;
+.main_icons {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-position:center;
+  background-size:cover;
 }
-.button_round2:hover{
-    background: #ff6b00;
-    color: black;
+.main_icons:hover{
+  filter: opacity(60%);
+}
+
+.main_icons_caption{
+  font-size: 20px;
+  color: white;
+  text-align: center;
 }
 
 .circular-img {
@@ -50,15 +53,8 @@ border-radius: 0px 0px 200px 0px;
   background-position:center;
   background-size:cover;
 }
-
-.card {
-  position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-background-color: red;
-color: white;
-text-align: center;
+.circular-img:hover{
+  transform: scale(1.2);
 }
 
 footer {
@@ -71,46 +67,4 @@ footer {
   font-size: 0.8em;
   bottom: 0;
   background-color:#fff;
-}
-
-.card:hover {
-  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.2);
-}
-
-.container {
-  padding: 2px 16px;
-}
-
-.vl {
-  border-left: 6px solid green;
-  height: 500px;
-}
-
-.circular-icons{
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
- }
-
-.text{
-	border-radius: 50%;
-  	width: 250px;
-  	height: 250px;
-  	background:#FFF;
-	opacity:0;
-}
-
-.circular-img:hover .text
-{
-	border-radius: 50%;
-  	width: 100px;
-  	height: 100px;
-  	opacity:0.8;
-	text-align:justify;
-	border-color:#2FBAB6;
-	color: white;
-	font-size:20px;
-	font-family:"Lucida Sans Unicode";
-	padding:30px;
 }
