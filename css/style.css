@@ -1,6 +1,11 @@
 .body_style{
-  background: #202020	;
+  background: #202020 ;
   border-radius: 0px 0px 200px 0px;
+  background-attachment: fixed;
+  background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)),url('../images/prabhat.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .intro_text{
@@ -22,7 +27,8 @@
   min-width: 150px;
   border-color: white;
   border: 2px solid white;
-  background: #202020;
+  background-color: Transparent;
+
 }
 .button_round:hover{
     background: white;
@@ -30,14 +36,14 @@
 }
 
 .main_icons {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-position:center;
   background-size:cover;
 }
 .main_icons:hover{
-  filter: opacity(60%);
+  -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .main_icons_caption{
@@ -48,8 +54,8 @@
 
 .circular-img {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-position:center;
   background-size:cover;
 }
@@ -66,6 +72,5 @@
   font-size: 0.8em;
   bottom: 0;
   margin-top: auto;
-
   background-color:#fff;
 }
