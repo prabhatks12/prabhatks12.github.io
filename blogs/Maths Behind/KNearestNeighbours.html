@@ -1,0 +1,140 @@
+<html>
+
+<head>
+<title>Maths behind KNN Clustering</title>	
+
+<style>
+	.box {
+		  background-color: #E8E8E8;
+		  width: 90%;
+		  border: 2px solid black;
+		  margin: 20px;
+		  padding-top: 20px;
+		  padding-bottom: 20px;
+		  padding-left: 10px;
+		  padding-right: 10px;
+		}
+		h3{
+			font-weight: bold;
+			color: red;
+		}
+		h4{
+			font-weight: bold;
+			color: blue;	
+		}
+
+	table, th, td {
+		border: 1px solid black;
+  		border-collapse: collapse;
+  		padding: 10px;
+	}
+</style>
+</head>
+<body>
+
+	<h3>Introduction</h3>
+
+    K Nearest Neighbors (KNN) classifier is classifying the target data based on independent features. The figure given below shows the green plot and red plot for labels A and B, respectively. These are the known labels from the training dataset. The yellow point shown below is one of the test set attributes. The model doesn't know its label. <br /><br />
+
+    So it will first find it's distance with every other point irrespective of their label. Then the model will classify the unknown test dataset attribute based on the number of k-neighbors given by the user. If the number of k-neighbors=3, then the result is green; if the k-neighbors=5, then the result is red. Now let's try to learn the maths behind it. 
+
+    It is generally preferred to choose odd values for k-neighbors to avoid confusion. If it's even, let's say 4, and we have two red points and two green points near the test data, then it will be difficult to determine its label.
+
+    <img src="Images/Knn_graph.png" /> <br /><br />
+
+	<h3>Maths behind K-Nearest Neighbors Classifiers</h3>
+
+	The equation given below is the Minkowski equation, which is used to calculate the distance between the new attribute and the training dataset attribute.<br /><br />
+
+	<div class="box">
+	
+	D(X,Y) = ( Σ |x <sub>i</sub>-y<sub>i</sub>| <sup>p</sup> )<sup>(1/p)<sup>
+
+	</div>
+
+	If p=1 : then it is manhatten distance ,<br />
+	&nbsp;&nbsp;&nbsp; p=2 : then it is euclidean distance, <br />
+	&nbsp;&nbsp;&nbsp; p = infinity : then it is Chebyshev distance .<br /><br />
+
+	<b>Manhatten distance: </b> <br />
+
+	It is useful for finding the distance between two coordinates or places when we need to include the root for finding the distance. If we use euclidean distance, then it just calculates the linear distance by excluding the root. <br /><br />
+
+	<b>Euclidean distance</b> <br />
+
+	It is useful when we need to find the linear distance between two points.  <br /><br />
+
+
+	<img src="Images/minkowski.png" /> <br /><br />
+
+	<b>Chebyshev distance</b> <br />
+	
+	For large values of differnces, we can see their influence on the results. <br /><br />
+	<table>
+		
+		<tbody><tr> <th> X </th> <th> Y </th> <th> difference <sup>p</sup> </th> <th> Result </th> <th> Σ difference <sup>p</sup> </th> <th> Contribution of each </th></tr>
+
+		<tr><td colspan="6" style="text-align: center;"> p = 1 </td></tr>
+		
+		<tr> <td> 1 </td> <td> 3 </td> <td> 2 </td> <td rowspan="3"> 18 </td> <td rowspan="3"> 18 </td> <td> 2/18 = 0.11 </td>  </tr>
+		<tr> <td> 8 </td> <td> 5 </td> <td> 3 </td> <td> 3/18 = 0.16 </td>  </tr>
+		<tr> <td> 7 </td> <td> 20</td> <td> 13</td> <td> 13/18 = 0.72 </td>  </tr>
+
+		<tr><td colspan="6" style="text-align: center;"> p = 2 </td></tr>
+		
+		<tr> <td> 1 </td> <td> 3 </td> <td> 4 </td> <td rowspan="3"> 13.49 </td> <td rowspan="3"> 13.49 <sup>2</sup> = 181.98 </td> <td> 4/181.98 = 0.021 </td>  </tr>
+		<tr> <td> 8 </td> <td> 5 </td> <td> 9 </td> <td> 9/181.98 = 0.049 </td>  </tr>
+		<tr> <td> 7 </td> <td> 20</td> <td> 169 </td> <td> 169/181.98 = 0.92 </td>  </tr>
+
+	</tbody></table>    
+
+	<br /><br />
+	Only for small values, the third row has a 92% contribution; you can only imagine how much it will change for larger values. Thus, this value is dominating others. If we have less number of features and we know that one feature is gonna dominate others than we can choose the higher values of p. <br /><br />
+
+
+	<h3>Using vectors for classifying labels</h3>
+
+	We can calculate the similarity in angles of the existing data points and the new data point. If the difference between their angles is small, then they are in the same direction, and the chances of them being a part of the same label are more. Thus we are treating all the data points as a vector which are originating from coordinate(0,0), and their angle is the angle between the x-axis and the line joining the datapoint and origin. <br /><br />
+
+    Thus, calculate the difference of angles for all vectors and the vector of a new data point, and select the k-nearest neighbors based on the angles. For the sake of clear drawing, i am taking two k-neighbors. Try to take an odd number of k-neighbors. <br /><br />
+
+
+    <div class="box">
+	
+	cos(X,Y) =  Σ (X<sub>i</sub>Y<sub>i</sub>) / ||X||&nbsp;||Y|| <br />
+	&nbsp;&nbsp;&nbsp;&nbsp; =  Σ (X<sub>i</sub>Y<sub>i</sub>) / (Σ X <sub>i</sub> <sup>2</sup> )<sup>1/2</sup>(Σ Y <sub>i</sub> <sup>2</sup> )<sup>1/2</sup>
+
+	</div>
+
+
+	<img src="Images/Knn_graph_angle.png" />
+	<br /><br />
+	
+	
+	<h3>Other important things which I found out</h3>
+
+	<br /> 
+	<b> Note:</b>
+	I am not too sure about certain points here, but these seem important as of now. If, in the future, I find any mistake, then I will update to or remove these points.
+
+	<ul>
+	<li> So if you want to implement a model on future data like tomorrow, then train the model till today's data and test tomorrow. The data is thus split on temporal or time features. <br /><br /> </li>
+
+	<li> Divide the dataset into 3 parts, test(like 20%) train(60-65%) and validation (15-20%). Use validation for testing initially and then train the whole model on the training and validation dataset to get better results. Never train it on the testing dataset. Also, try to apply k folds on validation and training dataset. <br /><br /> </li>
+
+	<li>
+	Train the model again on the data, which is incorrectly classified using not more than 1% of the test data
+    This is not overfitting as we are not changing the parameters of the model for suiting the test cases.
+    This is not leaking as we are not telling the model the correct labels priorly. We can even try to move some values from training dataset to test dataset as a replacement.<br /><br /> </li>
+
+    </ul>
+
+<h3>References</h3>
+
+1. <a href="https://booking.ai/k-nearest-neighbours-from-slow-to-fast-thanks-to-maths-bec682357ccd">k-nearest Neighbours: From slow to fast thanks to maths</a>. Author: Lucas Bernardi <br />
+2. <a href="https://www.youtube.com/watch?v=09mb78oiPkA">Introduction to Learning, Nearest Neighbors</a>. Instructor: Patrick Winston <br />
+3. <a href="https://www.youtube.com/watch?v=oymtGlGdT-k">Lecture 3 "k-nearest neighbors" -Cornell CS4780 SP17</a>. Author: Kilian Weinberger<br />
+4. <a href="https://en.wikipedia.org/wiki/Minkowski_distance">Wikipedia: Minkowski distance</a><br /></body>
+
+</body>
+</html>

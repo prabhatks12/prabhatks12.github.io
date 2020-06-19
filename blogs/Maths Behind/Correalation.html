@@ -1,0 +1,203 @@
+<head>
+	<style>
+		.box {
+		  background-color: #E8E8E8;
+		  width: 90%;
+		  border: 2px solid black;
+		  margin: 20px;
+		  padding-top: 20px;
+		  padding-bottom: 20px;
+		  padding-left: 10px;
+		  padding-right: 10px;
+		}
+		h3{
+			font-weight: bold;
+			color: red;
+		}
+		h4{
+			font-weight: bold;
+			color: blue;	
+		}
+	</style>
+</head>
+
+<body>
+	<div style="text-align: left;">
+	<p>
+
+	Let's talk about correlation today. A variable in a dataset can be related or dependent on some other variable.The relationship between them can be strong or light. Thus it's better to check it once before jumping on conclusions. <br><br>
+
+	Correlation can be positive if both variables change in the same direction, negative if they are moving in the opposite direction or natural if there is no relationship. There are several techniques to find it like seaborn heatmap and pairplot. Let's discuss the maths behind it first then dive into the code snippets to understand the implementation. <br><br>
+
+	Note: I have provided links to the sites where you can understand these formulae better with examples. I mostly create notes ( like this blog) so that it's easy for me to get everything in one place. So typing examples will be a lengthy task for me. Thank you. <br><br>
+
+	</p>
+
+	<h3> 1. Covariance: </h3> <br>
+
+	If the variables are correlated with a linear relationship, then we can use covariance to find it. <br>
+
+	<h4> Formula  : </h4> <b> Covariance(X, Y) =  [ Σ (Xi - mean(X) * (Yi - mean(Y) ] /(n-1) </b>
+	<br><br>
+
+	The sign of the covariance is used to determine the type of relationship which is the same as defined above. <br>
+	In python, we can use covariance by importing cov from NumPy. But it's difficult to interpret much from the magnitude of the results and multiple values.
+	<br><br>
+
+	<h4> Code snippet:</h4>
+
+	<div class="box">
+
+		from numpy import cov <br>
+		covariance = cov( X , Y ) <br>
+
+	</div>
+	<br><br>
+
+
+	<h3>2. Pearson's correlation coefficient:</h3>
+
+	It gives a coefficient value between -1 to 1 after normalizing the covariance with standard deviation (SD) for linear relationships. <br>
+
+	<h4> Formula: </h4> <b>Covariance(X, Y)/ ( SD(X)*SD(Y)) </b> <br><br>
+
+	The sign of the covariance is used to determine the type of relationship which is the same as defined above. Only the magnitude is betweeen -1 to 1. <br> 
+	pearsonr returns two values: first is the coefficient and the second is two-tailed p values.
+	<br>
+
+	<h4> Code snippet: </h4>
+
+	<div class="box">
+
+		from scipy.stats import pearsonr <br>
+		correlation , pvalue = pearsonr( X , Y ) <br>
+
+	</div> <br><br>
+
+
+	<h3>3. Spearman's Correlation : </h3>
+
+	Spearman's correlation is used for finding nonlinear relationship. The coefficient lies between -1 to 1 <br>
+
+	<h4>Formula : </h4> <b> Covariance(rank(X), rank(Y)) / (SD(rank(X)) * SD(rank(Y))) </b><br><br>
+
+	where rank means ranking the columns X in increasing order and then ranking Y according to X. See more info at <a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient"> "Wikipedia Spearman's rank coefficient"</a>. Please see the example to understand more. <br>
+	spearmanr also returns two values: first is the coefficient and the second is the pvalue <br>
+
+	<h4>Code snippet:</h4>
+
+	<div class="box">
+
+		from scipy.stats import spearmanr <br>
+		correlation , pvalue = spearmanr( X , Y ) <br>
+
+	</div> <br><br>
+
+
+	<h3>4. Kendall rank correlation coefficient:</h3>
+
+	It is calculated by using concordant and discordant pairs.
+	<br>
+	<ul>
+	<li>Concordant: Here we count the number of smaller value elements below a particular element for a given column. <br></li>
+
+	<li>Discordant: We count the number of higher value element below a particular element for a given column. <br></li>
+	</ul>
+
+	Check this: <a href="https://www.statisticshowto.com/kendalls-tau/">"Statics How to" </a>for understanding it with example. <br>
+
+	<h4>Code snippet:</h4>
+
+	<div class="box">
+
+		import scipy.stats as stats <br>
+		correlation, pvalue = stats.kendalltau( X , Y ) <br>
+
+	</div> <br><br>
+
+
+	<h3>5. Pandas corr( ) function </h3>
+
+	It uses pearson by default, but we can select from Pearson, Spearman or Kendall. <br>
+
+	<h4>Code snippet:</h4>
+
+	<div class="box">
+
+	import pandas <br>
+	data.corr() <br>
+	
+	</div> <br><br>
+
+	<h2 style="color: green;"> Seaborn heatmap and pair plot </h2>
+
+	The easiest way to draw a heatmap is finding the correlation first then passing it to heatmap( ) function defined in seaborn. <br>
+
+	<div class="box">
+
+		import seaborn as sns <br>
+		import pandas as pd <br><br>
+		correl=data.corr() <br>
+		ax = sns.heatmap(correl) <br>
+	 
+	</div><br><br>
+
+	This should produce a heatmap, something like this. <br><br>
+
+	<div class="separator" style="clear: both; text-align: center;">
+	<a href="https://1.bp.blogspot.com/-j76VpZc5xbc/XqrA7Q5zxqI/AAAAAAAAA_U/qT3b3t3p4KsJ7nlKZdYGiLkPxW7CnQ4TQCLcBGAsYHQ/s1600/heatmap.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="252" data-original-width="349" height="231" src="https://1.bp.blogspot.com/-j76VpZc5xbc/XqrA7Q5zxqI/AAAAAAAAA_U/qT3b3t3p4KsJ7nlKZdYGiLkPxW7CnQ4TQCLcBGAsYHQ/s320/heatmap.PNG" width="320" /></a></div>
+
+	<br>Various types of heatmap can be found in the <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html"> documentation of seaborn heatmap.</a><br>
+	Next, we will use pairplot to plot pair of graphs.
+	<br>
+
+	<div class="box">
+		
+		sns.pairplot(data)
+	
+	</div> <br><br>
+
+
+	This should produce a cluster of bar graph and scatter graphs which can be used to find any relationship between the variables. <br><br>
+
+	<div class="separator" style="clear: both; text-align: center;">
+	<a href="https://1.bp.blogspot.com/-ielHMACx3EE/XqrAU9wFpMI/AAAAAAAAA-8/OWgmGy7rtlQKUYXWLVbXfqiSDMWg9E1vwCEwYBhgL/s1600/pairplot.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="730" data-original-width="739" height="316" src="https://1.bp.blogspot.com/-ielHMACx3EE/XqrAU9wFpMI/AAAAAAAAA-8/OWgmGy7rtlQKUYXWLVbXfqiSDMWg9E1vwCEwYBhgL/s320/pairplot.png" width="320" /></a></div>
+
+	<br>
+	More variation can be found at <a href="https://seaborn.pydata.org/generated/seaborn.pairplot.html">"Seaborn pairplot documentation"</a> <br>
+
+	The graphs are plotted for kaggle dataset <a href="https://www.kaggle.com/mirichoi0218/insurance/kernels"> "Medical Cost Personal Datasets". </a>
+
+	<br><br>
+	<h3>References: Click on any reference or you can copy it.</h3>
+	<ul>
+
+	<li> Numpy Cov documentation: <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.cov.html"> https://docs.scipy.org/doc/numpy/reference/generated/numpy.cov.html</a>
+	</li>
+
+	<li> Scipy Pearsonr documentation: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html </a></li>
+
+	<li> Scipy Spearman documentation: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html</a></li>
+
+	<li> Scipy Kindall Tau coefficient documentation: <a href="https://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.stats.kendalltau.html"> https://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.stats.kendalltau.html </a></li>
+
+	<li> Wikipedia Spearman's rank correlation coefficient: <a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient </a></li>
+
+	<li> How to Calculate Correlation Between Variables in Python : Jason Brownlee
+	<a href="	https://machinelearningmastery.com/how-to-use-correlation-to-understand-the-relationship-between-variables/">
+	https://machinelearningmastery.com/how-to-use-correlation-to-understand-the-relationship-between-variables/ </a></li>
+
+	<li> Seaborn heatmap types: <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">
+	https://seaborn.pydata.org/generated/seaborn.heatmap.html </a></li>
+
+	<li> Statics How to Kendalls tau : <a href="https://www.statisticshowto.com/kendalls-tau/">https://www.statisticshowto.com/kendalls-tau/ </a></li>
+
+	<li> Seaborn pairplot documentation : <a href="https://seaborn.pydata.org/generated/seaborn.pairplot.html"> https://seaborn.pydata.org/generated/seaborn.pairplot.html </a></li>
+
+	<li> Kaggle Medical Cost Personal Datasets : <a href="https://www.kaggle.com/mirichoi0218/insurance/kernels"> https://www.kaggle.com/mirichoi0218/insurance/kernels </a></li>
+
+	</ul>
+
+
+</div>
+</body>
