@@ -96,3 +96,9 @@
   margin-top: auto;
   background-color:#fff;
 }
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 15px;
+}
