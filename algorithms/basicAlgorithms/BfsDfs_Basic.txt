@@ -1,0 +1,167 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class BfsDfs {
+
+	/*	Summary: 
+	 * 
+	 *  De-merits: Although the results are accurate, it is based on order of entry, if i change 10 and 9 position, result will also change,
+	 *	       Study only for understanding AdjacencyList
+	 * 	  
+	 *  Aim of the code is to implement BFS and DFS,
+	 *	graphs does'nt exist by default, thus create a class.
+	 *
+	 *				0
+	 *			     /  |  \  
+	 *			    1	2   3
+	 *		          / |   |   | \
+	 *		         4  5	6   7  8
+	 *	   	       / |		
+	 *	  	      9  10 
+	 *
+	 *  This is our graph, note that it is not a BST, just a graph, instead of values,
+	 *  it shows the nodes connected. Like , there is a connection between 0-1 , 0-2 and 0-3.
+	 * 
+	 *  As we are using AdjacencyList, we can directly access the child nodes from source, 
+	 *  just from the index value, this will reduce the time complexity.
+	 *  
+	 *  
+	 *  The AdacencyList will be:
+	 *  
+	 *  0 : 1,2,3
+	 *  1 : 4,5
+	 *  2 : 6
+	 *  3 : 7,8
+	 *  4 : 9, 10	
+	 *  
+	 *  
+	 *  BFS: LinkedList 
+	 *  Iteration : Queue
+	 *  	1	  : 1				-> 1 will be popped, child 4,5 will be added
+	 *  	2	  : 4,5				-> 4 will be popped, child 9,10 added
+	 *  	3	  : 5,9,10				
+	 *  
+	 *  
+	 *  
+	 *  DFS: Recursion
+	 * 	Iteration : 	 
+	 * 		1	  : Explore child nodes one by one, first 4 will be explored	
+	 * 		2     	  : 4 is visited, child nodes 9 and 10 are explored
+	 * 		3     	  : 9 is explored... so on 
+	 * 
+	 */	
+	
+	class Graph 
+	{ 
+		
+	    private int numVertices;   
+	    private LinkedList<Integer> adjacencyList[]; 
+	  
+	    // Constructor , input vertex, adding empty LinkedList to our private adjacencyList
+	
+  	    Graph(int vertex) 
+	    { 
+	        this.numVertices = vertex; 
+	        this.adjacencyList = new LinkedList[vertex]; 
+	        
+	        for (int i=0; i<vertex; ++i) 
+	            this.adjacencyList[i] = new LinkedList(); 
+	    } 
+	  
+	    // Function to add an edge into the graph , just like hash table
+	    void addEdge(int nodeStart,int nodeEnd) 
+	    { 
+	        this.adjacencyList[nodeStart].add(nodeEnd); 
+	    }
+	    
+	    // BFS is used to generate the child tree from a source node, for example, 2 as source 
+	    // will show 2-6
+	    void BFS(int source){
+	    	
+	    	boolean visited[] = new boolean[this.numVertices];
+	    	int currentVal = 0; 
+	    	
+	    	LinkedList<Integer> queue = new LinkedList<Integer>();
+	    	
+	    	visited[source] = true;
+	    	queue.add(source);
+	    	
+	    	while(!queue.isEmpty()){
+	    		
+	    		currentVal = queue.poll(); // removing the head from the LinkedList inside the AdjacencyList
+	    		System.out.print(currentVal + " ");
+	    		
+	    		// adjacencyList[currentVal] will return the LinekdList of the currentVal
+	    		Iterator<Integer> iterator = adjacencyList[currentVal].listIterator(); 
+	    		
+	            while (iterator.hasNext()) 
+	            { 
+	                int val = iterator.next(); 
+	                
+	                // adding all the unvisited Children to the queue	                
+	                
+	                if (!visited[val]) 
+	                { 		                	
+	                    visited[val] = true; 
+	                    queue.add(val); 
+	                } 
+	            } 	    		
+	    	} // end of outer while	    		    	
+	    }
+	    
+	    
+
+	    // Recursion is required because we immediately wants to find the child, 
+	    // thus going into depth
+	    void DFS(int v) 
+	    { 
+	        boolean visited[] = new boolean[this.numVertices]; 
+	  
+	        // Call the recursive helper function to print DFS traversal 
+	        DFSUtil(v, visited); 
+	    } 
+	    
+	    void DFSUtil(int vertex,boolean visited[]) 
+	    { 
+	        // Mark the current node as visited and print it 
+	        visited[vertex] = true; 
+	        System.out.print(vertex+" "); 
+	  
+	        // Recur for all the vertices adjacent to this vertex 
+	        Iterator<Integer> iterator = this.adjacencyList[vertex].listIterator(); 
+	        while (iterator.hasNext()) 
+	        { 
+	            int n = iterator.next(); 
+	            if (!visited[n]) 
+	                DFSUtil(n, visited); 
+	        } 
+	    } 
+
+	}
+	
+	
+	public static void main(String args[]){
+
+	BfsDfs instance = new BfsDfs();	
+	Graph g = instance.new Graph(11);  // 11 because 0 is included 
+		  
+        g.addEdge(0, 1); 
+        g.addEdge(0, 2); 
+        g.addEdge(0, 3); 
+        g.addEdge(1, 4);
+        g.addEdge(1, 5); 
+        g.addEdge(2, 6); 
+        g.addEdge(3, 7); 
+        g.addEdge(3, 8); 
+        g.addEdge(4, 9); 
+        g.addEdge(4, 10); 
+  
+        System.out.println("Output BFS : "); 
+        g.BFS(1); 
+        
+        System.out.println("\n\nOutput DFS : "); 
+        g.DFS(1); 
+
+		
+	}
+}
