@@ -31,23 +31,88 @@
 		<br>
 		<table>
 			<tr> <th>Sl No</th> <th>Topic</th> <th>Book/ Link </th> <th>Implementation</th> </tr>
-		    <tr> <td colspan="4"> Tree/Graph Based Algorithms </td> </tr>
-			<tr> <td> 1 </td> <td> BFS DFS Short implementation</td>
-				 <td> Geeks for Geeks <a href="https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/"> BFS </a> <a href="https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/"> DFS </a></td>
-				 <td> <a href="algorithms/basicAlgorithms/BfsDfs_Basic.txt"> Present in Algorithms Folder </a></td>
-			</tr>
+
 		</table>
 
 		<br><br>
+
+
+
+		<!-- ================================   AI Algorthim section =============================== -->
+
 		<h5>Artificial Intellegence Algorithm</h5>
 		<br>
+
 		<table>
-		    <tr> <th>Sl No</th> <th>Topic</th> <th>Book/ Link </th> <th>Implementation</th> </tr>
-		    <tr>
-				<td>1</td> <td>A star</td>
-				<td> <a href="https://www.youtube.com/watch?v=amlkE0g-YFU&ab_channel=edureka%21"> Edureka video: </a> Watch till explanation </td>
-				<td> <a href=" https://www.annytab.com/a-star-search-algorithm-in-python/"> Best Implementation : </a> See the working code</td>
+
+			<!-- headers -->
+		    <tr> <th>Sl No</th> <th>Topic</th> <th>Explanation </th> <th>Implementation</th> <th>Notes</th> </tr>
+			<tr> <td colspan="5"> <b>Un-Informed search Strategy</b> (from AI Book 1 Ch 3)</td></tr>
+
+			<!-- 1 -->
+			<tr> <td> 1 </td> <td> <b> BFS DFS </b> : Short implementation </td>
+				 <td> Geeks for Geeks <a href="https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/"> BFS </a> and <a href="https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/"> DFS </a></td>
+				 <td> <a href="algorithms/basicAlgorithms/BfsDfs_Basic.txt"> Present in Algorithms Folder </a></td>
+				 <td> Good for leanring Adjacency List</td>
 			</tr>
+
+			<!-- 2 -->
+			<tr> <td> 2 </td> <td> <b>Uniform Cost Search </b> or Cheapest First Search </td>
+				 <td> Explanation: <a href="https://www.youtube.com/watch?v=dRMvK76xQJI&ab_channel=JohnLevine"> YouTube JohnLevine </a></td>
+				 <td> Read algorithm from the AI Book 1 , also take reference from <a href="https://www.geeksforgeeks.org/uniform-cost-search-dijkstra-for-large-graphs/"> Geeks for geeks</a></td>
+				 <td> It is a variant of Dijsktra Algorithm & it uses priority queue</td>
+			</tr>
+
+			<!-- 3 -->
+			<tr> <td> 3 </td> <td> <b>Depth Limited Search and Itertive Deepening Search </b>(or Iterative Deepening Depth First Search)</td>
+				 <td> Explanation: Read algorithm from the AI Book 1 for both , <a href="https://www.youtube.com/watch?v=Y85ECk_H3h4&ab_channel=JohnLevine">Youtube JohnLevine</a></td>
+				 <td>  Itertive Deepening Search <a href="https://www.geeksforgeeks.org/iterative-deepening-searchids-iterative-deepening-depth-first-searchiddfs/"> Geeks for geeks</a></td>
+				 <td> Depth limited search works same as dfs with an additional parameter to check depth.
+					  Itertive deepening uses a loop to increment this depth.</td>
+			</tr>
+
+			<!-- 4 -->
+			<tr> <td> 4 </td> <td> <b>Bi-Directional Search </b> </td>
+				 <td> Explanation: read from  AI Book 1 </a></td>
+				 <td> Take reference from <a href="https://www.geeksforgeeks.org/bidirectional-search/"> Geeks for geeks</a></td>
+				 <td> The majaor change is in adding the node to Adjacency List, add the node in both order <br> void Graph::addEdge(int u, int v){ <br>  this->adj[u].push_back(v); <br> this->adj[v].push_back(u); };<br></td>
+			</tr>
+
+
+			<tr> <td colspan="5"> <b>Informed search Strategy </b>(using Heuristic , from AI Book 1 Ch 3) </td> </tr>
+
+			<!-- 5 -->
+			<tr>
+				<td>5</td> <td> <b>A star </b></td>
+				<td> <a href="https://www.youtube.com/watch?v=6TsL96NAZCo&ab_channel=JohnLevine">Best Explanation by JohnLevine, </a> good explanation from <a href="https://www.youtube.com/watch?v=amlkE0g-YFU&ab_channel=edureka%21"> Edureka video: </a> Watch till explanation </td>
+				<td> <a href=" https://www.annytab.com/a-star-search-algorithm-in-python/"> Best Implementation : </a> See the working code</td>
+				<td> f(n) = g(n) + h(n)  --> g(n) added cost to from the start to current node, h(n) --> approx cost to the end node from the current node,
+					thus uses earned knowledge. Also check under-estimation and over-estimation based on heuristic values(needed for optimal sol) </td>
+			</tr>
+
+			<!-- 6 -->
+			<tr>
+				<td>6</td> <td><b>Best First Search</b> or (Greedy Best first search)</td>
+				<td> <a href="https://www.youtube.com/watch?v=O9Bp5O2aeu0&ab_channel=5MinutesEngineering"> Youtube: 5 minutes Enginnering </a> </td>
+				<td> Book : page 99  and class notes pg 49, lecture 2 pdf, <b>heuristic are not optimal </b></td>
+				<td>Greedy best-first search tries to expand the node that is closest to the goal, on the grounds that this is likely to lead to a solution quickly.
+					Thus, it evaluates nodes by using just the heuristic function; that is, f(n)=h(n). It is not using the prior costs which lead it to the current node (g(n)).
+					Greedy BFS can get trapped in infinte loop, it doesnt have any visited list.
+				</td>
+			</tr>
+
+			<tr> <td colspan="5"> <b>Adverserial search Strategy </b>(from AI Book 1 Ch 5) </td> </tr>
+
+			<!-- 7 -->
+			<tr>
+				<td>7</td> <td> <b>MiniMax and Alpha Beta Pruining </b></td>
+				<td> <a href="https://www.youtube.com/watch?v=l-hh51ncgDI&ab_channel=SebastianLague">Best Explanation by Sebastian Lague</a></td>
+				<td> Best Implementation : see the video mentioned, read book ch 5</td>
+				<td> Alpha Beta Pruining are based on minimax, the algorithms are almost similar, easy to understand.
+					 These are used for turnwise multiplayer games like chess. <b>Try implementing it on a game</b></td>
+			</tr>
+
+
 		</table>
 
 		<br><br>
@@ -56,6 +121,8 @@
 	<div class="col-1"> </div>
 
 </div>
+
+AI Book 1 : Artificial Intelligence , A Modern Approach , Third Edition , Stuart J. Russell and Peter Norvig
 
 </body>
 </html>
