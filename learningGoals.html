@@ -37,7 +37,6 @@
 		<br><br>
 
 
-
 		<!-- ================================   AI Algorthim section =============================== -->
 
 		<h5>Artificial Intellegence Algorithm</h5>
@@ -113,16 +112,146 @@
 			</tr>
 
 
+			<!-- 8 -->
+			<tr>
+				<td>8</td> <td> <b>Expectimax Algorithm </b></td>
+				<td> See tutorial notes for week4, also see book Ai, ch 5 page 178</td>
+				<td> Almost same as minimax, <a href="https://www.geeksforgeeks.org/expectimax-algorithm-in-game-theory/">Geeks for geeks</a></td>
+				<td>Take average on from minium nodes. It is like risk taking for getting higher positive outcomes.<b>Try implementing it on a game</b></td>
+			</tr>
+
+			<tr> <td colspan="5"> <b>Knowledge Representation and Propositional Logic </b>( not really fond of this part, for the syllabus sake, do from videos) </td> </tr>
+
+			<!-- 9 -->
+			<tr>
+				<td>9</td> <td> <b>Propositional Logic </b></td>
+				<td> <a href="https://www.youtube.com/watch?v=6490tKrGEic&ab_channel=GateSmashers">Gate Smashers</td>
+				<td> No implemenation, see notes <a href="https://www.javatpoint.com/propositional-logic-in-artificial-intelligence">Java T point</a></td>
+				<td>See videos instead of book, book is too lengthy. Syntax, sementics also defined here</td>
+			</tr>
+
+			<!-- 10 -->
+			<tr>
+				<td>10</td> <td> <b>Knowledge Representation </b></td>
+				<td> <a href="https://www.youtube.com/watch?v=9iN3O_oL2ac&ab_channel=GateSmashers">Gate Smashers</td>
+				<td> No implemenation, see notes <a href="https://www.javatpoint.com/knowledge-representation-in-ai">Java T point</a></td>
+				<td>Types of knowledge</td>
+			</tr>
+		</table>
+		<br><br>
+
+	<!-- ================================ Analysis of Algorthim section =============================== -->
+
+
+	<h5>Analysis of Algorthim or General Algorithms</h5>
+		<br>
+
+		<table>
+
+			<!-- headers -->
+		    <tr> <th>Sl No</th> <th>Topic</th> <th>Explanation </th> <th>Implementation</th> <th>Notes</th> </tr>
+			<tr> <td colspan="5"> <b>Greedy Technique </b> (from Algorithm Book 1 Ch 9)</td></tr>
+
+			<!-- 1 -->
+			<tr> <td> 1 </td> <td> <b> Prims Algorithm </b> Spanning tree</td>
+				 <td> Geeks for Geeks <a href="https://www.geeksforgeeks.org/prims-minimum-spanning-tree-mst-greedy-algo-5/"> Prims </a> , rest read from the course videos</td>
+				 <td> Read from the book </td>
+				 <td>Spanning Tree: contains all vertex but not all edges <a href="https://www.tutorialspoint.com/data_structures_algorithms/spanning_tree.htm"> Spanning Link</a></td>
+			</tr>
+			
+			<!-- 2 -->
+			<tr> <td> 2 </td> <td> <b> Kruskal Algorithm </b> Spanning tree</td>
+				 <td> Geeks for Geeks <a href="https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/"> Kruskal </a>
+				 ,rest read from the course videos </td>
+				 <td> Read from the book </td>
+				 <td>Spanning Tree: contains all vertex but not all edges <a href="https://www.tutorialspoint.com/data_structures_algorithms/spanning_tree.htm"> Spanning Link</a></td>
+			</tr>
+			
+			<tr> <td colspan="5"> <b>Dynamic Programming</b> (from Algorithm Book 1 Ch 8)
+
+				<br>
+				<b>Idea:</b> We want to solve problem by reusing previously solved sub-problems, we might use more than once the solved stored solution. In divide and conquer, sub solutions might be independent, sub problems might be dependent in dyanmic programming. Two types, top down and bottom up.			
+				</td></tr>
+
+				<!-- 2 -->
+				<tr> <td> 1 </td> <td> <b> Coin row problem </b></td>
+					 <td> Watch course video<a href="https://www.basicsbehind.com/2014/08/15/dynamic-programming/">Explanation and implementation</a></td>
+					 <td> Read from the book page: 285</td>
+					 <td> Course video is the best to understand, no need to code, basic lgorithm. <b>Note: </b>Learn how to back track</td>
+				</tr>
+			
+
+				<!-- 2 -->
+				<tr> <td> 2 </td> <td> <b> Transitive closure on Warshall's Algorithm </b></td>
+					 <td> Watch course video (best explanation) <a href="https://www.geeksforgeeks.org/transitive-closure-of-a-graph/">Explanation and implementation</a></td>
+					 <td> Read from the book page: 305</td>
+					 <td> See implementation, easy to understand, bit difficult to implement</td>
+				</tr>
+
+
+				<!-- 2 -->
+				<tr> <td> 3 </td> <td> <b> Edit Distance </b></td>
+					 <td> Watch course video (best explanation) <a href="https://www.geeksforgeeks.org/edit-distance-dp-5/">Explanation and implementation Geeks</a>
+					 <a href="https://youtu.be/We3YDTzNXEk">, Youtube implementation</a></td>
+					 <td> Geeks implementation see</td>
+					 <td> Important for knowing how many changes required to make 2 string equal. <b>Note: </b> See how to back track</td>
+				</tr>
+
+				<!-- 2 -->
+				<tr> <td> 4 </td> <td> <b> Knap Sack </b></td>
+					 <td> See from course video, and <a href="https://www.youtube.com/watch?v=nLmhmB6NzcM&ab_channel=AbdulBari">youtube AbdulBari</a></td>
+					 <td> See book page 292, <br> We are calulating for a range of capacity values, handy if you need the result for the same set and for a value in this range.</td>
+					 <td> <b>Equation based</b> 
+					 	<br> V[i, j] = (max(V[i − 1, j], vi + V[i − 1, j − wi]) if j − wi ≥ 0, <br>V[i − 1, j] if j − wi < 0.  <br> V[0, j] = 0 for j ≥ 0 and V[i, 0] = 0 for i ≥ 0.	 
+					</td>
+				</tr>
+
+				
+			
 		</table>
 
-		<br><br>
+
+	<br><br>	
+
+
+
+
+
 	</div>
 
 	<div class="col-1"> </div>
 
 </div>
 
-AI Book 1 : Artificial Intelligence , A Modern Approach , Third Edition , Stuart J. Russell and Peter Norvig
+
+
+<div class="col-12 row">
+
+	<div class="col-1"> </div>
+
+	<div class="col-10">
+
+		<br><h3>Books reference </h3>
+		1 : AI Book 1 : Artificial Intelligence , A Modern Approach , Third Edition , Stuart J. Russell and Peter Norvig<br>
+
+
+
+		<br><h3>Extra resources </h3>
+		For AI theory part, see <a href="https://www.javatpoint.com/artificial-intelligence-tutorial">Java T point notes, level: Basic </a><br>
+
+
+		predicates
+		<br><h3>Todo </h3>
+		1. <a href="https://lti-adx.adelaide.edu.au/data/snake/">Create snake game using this logic </a> , and try to implement the algorithms <br>
+		2. Add 2 more columns for complexity and wheter u have implemented it or not
+
+		<br><br>
+
+	</div>
+
+	<div class="col-1"> </div>
+
+</div>
 
 </body>
 </html>

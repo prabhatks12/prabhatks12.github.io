@@ -2,128 +2,393 @@
 <html>
 <head>
 	<title>Portfolio</title>
+	<script src="script/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=0.7">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
-<body  onload="typeWriter()">
+<body  onload="typeWriter()" class="body_style">
 
-<div class="col-12 row body_style" style="position: relative;height: 100%;">
+
+<!-- 
+*************************************************************************
+*************************************************************************
+*
+*	1. HEADER SECTION   
+*
+*************************************************************************
+*************************************************************************
+-->
+
+
+
+<div class="col-12 row" style="position: relative;height: 100%;">
 
 		<div class="col-1"></div>
 
 		<div class="col-7 center_vertical">
+			<br><br><br>
 			<p class="intro_text"><b>prabhat kumar singh</b></p>
-			<p class="normal_text" id="demo" style="height: 2em;"></p>
-			<br>
-			<button class="button_round normal_text">Show Skills</button>&nbsp; &nbsp; &nbsp;
-			<button class="button_round normal_text">Download Resume</button>
+			<p class="normal_text" id="demo" style="height: 2em;margin-bottom: 50px;"></p>
+			<br><br>
+			<button class="button_round normal_text" onclick="location.href = '#skillSection'">Show Skills</button>&nbsp; &nbsp; &nbsp;
+			<a href="resume/Prabhat_resume.pdf" download><button class="button_round normal_text">Download Resume</button></a>
 			<br><br><br>
 			<div class="col-12 row">
-					<figure>
-						<img src="icons/code.png" class="main_icons">
-						<figcaption class="main_icons_caption">Projects</figcaption>
-					</figure>
+					
+				<figure>
+					<a href="#projectSection"><img src="icons/code.png" class="main_icons"></a>
+					<figcaption class="main_icons_caption">Projects</figcaption>
+				</figure> <br>
 
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<figure>
+					<a href="http://imprabhat12.blogspot.com/"><img src="icons/blog.png" class="main_icons"></a>
+					<figcaption class="main_icons_caption">Blogs</figcaption>
+				</figure> <br>
 
-					<figure>
-						<img src="icons/blog.png" class="main_icons">
-						<figcaption class="main_icons_caption">Blogs</figcaption>
-					</figure>
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<figure>
+					<a href="#expSection"><img src="icons/work.png" class="main_icons"></a>
+					<figcaption class="main_icons_caption">Experience</figcaption>
+				</figure> <br>
 
-					<figure>
-						<a href="learningGoals.html"><img src="icons/note.png" class="main_icons"></a>
-						<figcaption class="main_icons_caption">Learning</figcaption>
-					</figure>
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<figure>
+					<a href="learningGoals.html"><img src="icons/note.png" class="main_icons"></a>
+					<figcaption class="main_icons_caption">Learning</figcaption>
+				</figure>
 
-					<figure>
-						<img src="icons/aboutme.png" class="main_icons">
-						<figcaption class="main_icons_caption">About Me</figcaption>
-					</figure>
+
 			</div>
-			<br>
+			<br><br><br>
 		</div>
 
 		<div class="col-2 center_vertical row">
 				<img src="images/prabhat_no_background.png" class="circular-background_img">
 		</div>
+ 		
 
 		<div class="col-2"></div>
 
 </div>
 
-<div class="row">
 
-	<div class="col-2"> </div>
 
-	<div class="col-8">
 
-		<p class="heading_text"> Projects </p>
+<!-- 
+*************************************************************************
+*************************************************************************
+*
+*	2. PROJECTS SECTION   
+*
+*************************************************************************
+*************************************************************************
+-->
+
+
+<div class="col-12 row white_background_right" id="projectSection">
+
+	<div class="col-1"> </div>
+
+	<div class="col-10">
+
+		<p class="heading_text"> Projects </p>		
+
+		<div class="scrolling-wrapper row flex-row flex-nowrap">
+
+			<!-- ****************  1. Sentimental analysis **************** -->
+
+			<div class="card-block" style="width:350px">
+				
+				<div class="card-header"><h5>Sentimental Analysis on Video</h5></div>				
+				<div class="card-img-top">
+					<video width="330" height="200" controls>
+					  <source src="videos/output.mp4" type="video/mp4">
+					  Your browser does not support the video tag.
+					</video>
+				</div>				
+				<div class="card-body" style="border: 2px bold;background-color: #fff;">				
+					A model is trained on various facial sentiments using Keras Sequential model and the results are added to a given video.
+				</div>
+				
+			</div>
+			&nbsp; &nbsp;&nbsp; &nbsp;  
+				
+
+			<!-- ****************  2. Face Recognition **************** -->
+
+			<div class="card-block" style="width:350px">
+
+				<div class="card-header"><h5> Face Recognition</h5></div>
+				<div class="card-img-top"><img src="images/face_recognition.png" width="330px" height="200px"></div>
+				<div class="card-body">			
+					I learned about finding face landmarks, creating our own filters, face comparison based on 128 encoding values, and a bit about face swap. using the face_recognition library.				
+				</div>
+			</div>
+			&nbsp; &nbsp; &nbsp; &nbsp; 
+				
+
+			<!-- ****************  3. Medical Cost Personal **************** -->
+			
+			<div class="card-block" style="width:350px">
+				<div class="card-header"><h5> Medical Cost Personal</h5></div>
+				<div class="card-img-top"><img src="images/medical_cost_personal.png" width="330px" height="200px"></div>
+				<div class="card-body">			
+					The project includes general attributes affecting high and low bills from hospitals. Two new things that I learned from this project are the Spearman correlation technique and adding Polynomial features to regression.		
+				</div>
+			</div>		
+			&nbsp; &nbsp; &nbsp; &nbsp; 
+
+			
+			<!-- ****************  4. Image classification using Keras **************** -->
+
+			<div class="card-block" style="width:350px;">
+
+				<div class="card-header"><h5> Image classification using Keras</h5></div>
+				<div class="card-img-top"><img src="images/fruits_recognition.png" width="330px" height="200px">
+				</div>
+				<div class="card-body">			
+					The project aimed to classify the fruits dataset containing labeled images of fruits. Keras sequential model is used to predict the labels of test images. I learned about the sequential model, max pooling, and dropouts. The model achieved an accuracy of 88%.
+				</div>
+			</div>
+
+		</div>	
+		<br><br><br><br><br><br>
+	</div>
+
+	<div class="col-1"> </div>
+
+</div>
+
+
+
+
+<!-- 
+*************************************************************************
+*************************************************************************
+*
+*	EXPERIENCE SECTION
+*   
+*************************************************************************
+*************************************************************************
+-->
+
+
+<div class="col-12 row" id="expSection">
+
+	<div class="col-1"> </div>
+
+	<div class="col-10">
+
+		<p class="heading_text"> Experience </p>		
 		<br><br>
-		<div class="col-12 row">
 
-			<div class="col-6">
-			<br>
-			<h3> Sentimental Analysis on Video</h3>
-				The aim of the project is to perform sentimental analysis on a given video.
-				A model is trained on various facial sentiments using Keras Sequential model and the results are added to a given video.
-			</div>
-			<div class="col-6">
-				<video width="380" height="200" controls>
-				  <source src="videos/output.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-				</video>
-			</div>
-		</div>
+		<div class="timeline">
+
+			<!-- ****************  1. AI Australia **************** -->
+
+		  	<div class="container left">
+		    	<div class="content">
+		      		<h2>AI Australia (Data Scientist)</h2>
+		      		<h7>Aug 2020 - Present</h7><br><br>
+		      		<p> at AI Australia, working on various AI related projects.</p>
+		    	</div>
+		  	</div>
+
+			<!-- ****************  2. Mimyk **************** -->
+
+		  	<div class="container right">
+			    <div class="content">
+			        <h2>Mimyk</h2>
+			        <h7>Jul 2019 - Jan 2020</h7><br><br>
+			        <p>The product which I was working on deals with endoscopy simulation, user interface and connectivity between both. I worked on the architecture of the product which involves flask and websockets and also on the user interface side which includes writing html, css and javascript code.</p>
+			    </div>
+		  	</div>
+
+			<!-- ****************  3. JetGlobo Technologies **************** -->
+
+	  		<div class="container left">
+			    <div class="content">
+			      	<h2>JetGlobo Technologies</h2>
+			      	<h7>Jul 2018 - Sep 2018</h7><br><br>
+			      	<p>My work in this startup mainly includes developing app related to aviation industry news, flight timings and offers from different companies for passengers . I developed the app from scratch so that they can get initial fundings.</p>
+		     	</div>
+	      	</div>
+
+			<!-- ****************  4. Mr Hot Foods Pvt Ltd **************** -->
+
+			<div class="container right">
+			    <div class="content">
+			        <h2>Mr Hot Foods Pvt Ltd</h2>
+			  	    <h7>Aug 2017 - Sep 2017</h7><br><br>
+	    		    <p>Its a good startup which provides tiffin services. It involves both consumer and local restaurants. I mainly worked on the android app for the vendor side. My work includes changing the interface, fixing major bugs and also publishing it on the app store.</p>
+			    </div>
+		    </div>	      
+      	
+      	</div> 
+	</div>
+
+	<div class="col-1"> </div>
+</div>
+
+
+
+<!-- 
+*************************************************************************
+*************************************************************************
+*	
+*	SKILLS PERCENTAGE SECTION  
+* 
+*************************************************************************
+*************************************************************************
+-->
+
+<br><br><br>
+<div class="col-12 row" id="skillSection">
+
+	<div class="col-1"> </div>
+
+	<div class="col-10">
+
+		<p class="heading_text"> Skills Percentage </p>
 		<br><br>
-		<div class="col-12 row">
 
-			<div class="col-6">
-				<img src="images/googlenet_output.png" width="380" height="300">
+		<!-- ****************  First row ************* -->	
+
+		<div class="row">
+
+			<!-- ****************  Skill: Java **************** -->
+
+			<div class="percent">
+			  <svg id="javaPerCircle">
+			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
+			  </svg>
+			  <script>setPercentageCircle(90,'javaPerCircle');</script>
+			  <div class="number">
+			    <h2>90<span>%</span></h2>
+			  </div>			  
+			  <br><br><h4 style="text-align: center; color: white;"> Java </h4><br><br>
 			</div>
+			&nbsp; &nbsp; &nbsp; &nbsp;
 
-			<div class="col-6">
-			<br>
-			<h3> GoogleNet Caffe</h3>
-				In this project, I tried to identify the objects from a set of images and videos.
-				For this purpose, I have used the BVLC GoogleNet Caffe model, which is already pre-trained on 1000 classes, including animals and objects.
-				So, we don't need to train any model.
+
+			<!-- ****************  Skill: Python **************** -->
+
+			<div class="percent">
+			  <svg id="pythonPerCircle">
+			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
+			  </svg>
+			  <script>setPercentageCircle(75,'pythonPerCircle');</script>
+			  <div class="number">
+			    <h2>75<span>%</span></h2>
+			  </div>
+			  <br><br><h4 style="text-align: center; color: white;"> Python </h4><br><br>
 			</div>
-		</div>
+			&nbsp; &nbsp; &nbsp; &nbsp;<br><br>
+			
+			<!-- ****************  Skill: AI **************** -->
 
-		<div>
+			<div class="percent">
+			  <svg id="aiPerCircle">
+			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
+			  </svg>
+			  <script>setPercentageCircle(65,'aiPerCircle');</script>
+			  <div class="number">
+			    <h2>65<span>%</span></h2>
+			  </div>
+			  <br><br><h4 style="text-align: center; color: white;"> Artificial Intelligence </h4> <br><br>
+			</div>
+			&nbsp; &nbsp; &nbsp; &nbsp;<br><br>
 
-		</div>
+			<!-- ****************  Skill: Git **************** -->
 
-		<div>
+			<div class="percent">
+			  <svg id="gitPerCircle">
+			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
+			  </svg>
+			  <script>setPercentageCircle(50,'gitPerCircle');</script>
+			  <div class="number">
+			    <h2>50<span>%</span></h2>
+			  </div>
+			  <br><br><h4 style="text-align: center; color: white;"> Github </h4> <br><br>
+			</div>
+			&nbsp; &nbsp; &nbsp; &nbsp;
+			<br><br>
 
-		</div>
+			<!-- ****************  Skill: HTML,JS,CSS **************** -->
+
+			<div class="percent">
+			  <svg id="htmlPerCircle">
+			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
+			  </svg>
+			  <script>setPercentageCircle(60,'htmlPerCircle');</script>
+			  <div class="number">
+			    <h2>60<span>%</span></h2>
+			  </div>
+			  <br><br><h4 style="text-align: center; color: white;"> HTML, JS, CSS </h4> <br><br>
+			</div>
+			&nbsp; &nbsp; &nbsp; &nbsp;
+			<br><br>
+
+			<!-- ****************  Skill: Team Player **************** -->
+
+			<div class="percent">
+			  <svg id="teamPlayerPerCircle">
+			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
+			  </svg>
+			  <script>setPercentageCircle(100,'teamPlayerPerCircle');</script>
+			  <div class="number">
+			    <h2>100<span>%</span></h2>
+			  </div>
+			  <br><br><h4 style="text-align: center; color: white;"> Team Player </h4> <br><br>
+			</div>
+			<br><br>
+
+		</div>		
+		<br><br>
 
 	</div>
 
-	<div class="col-2"> </div>
-
-</div>
-
-
-<div class="col-12 footer_end">
-		<br><br>
-		<img src="icons/github.jpg" class="circular-img" />&nbsp; &nbsp;
-		<img src="icons/linkedin.png" class="circular-img" />&nbsp; &nbsp;
-		<img src="icons/kaggle.jpg" class="circular-img" />&nbsp; &nbsp;
-		<img src="icons/hackerearth.png" class="circular-img" />&nbsp; &nbsp;
-		<br><br>
-		<p class="normal_text" style="color:#000;"><b>Contact:imprabhat12@gmail.com</b></p>
+	<div class="col-1"> </div>
+	
 </div>
 
 
 
-<script src="script/script.js"></script>
+<!-- 
+*************************************************************************
+*************************************************************************
+*	
+*	FOOTER SECTION
+* 
+*************************************************************************
+*************************************************************************
+-->
+
+
+<div class="col-12 footer_end white_background_bottom">
+	<br><br>
+	
+	<a href="https://github.com/prabhatks12"><img src="icons/github.jpg" class="circular-img" /></a>
+	&nbsp; &nbsp;
+	
+	<a href="https://www.linkedin.com/in/prabhatkumarsingh12/"><img src="icons/linkedin.png" class="circular-img" /></a>
+	&nbsp; &nbsp;
+	
+	<a href="https://www.kaggle.com/prabhat12"><img src="icons/kaggle.jpg" class="circular-img" /></a>&nbsp; &nbsp;
+	
+	<a href="https://www.hackerearth.com/@Prabhatks"><img src="icons/hackerearth.png" class="circular-img" /></a>&nbsp; &nbsp;
+
+	<br><br>
+	<p class="normal_text" style="color:#000;"><b>Gmail: imprabhat12@gmail.com</b></p>
+	<br><br>
+</div>
+
+
+
 </body>
 </html>
