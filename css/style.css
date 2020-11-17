@@ -84,13 +84,13 @@
   margin-top: 5%;
   font-family: Andale;
   color: #272727;  /* AC3B61 C3073F FFDF6C  F3D250  895061 17252A 303C6C*/
-  font-size: 4em;
+  font-size: 400%;
   width: 100%;
 }
 
 .heading_text{
   margin-top: 5%;
-  font-family: Impact;
+  font-family: Andale;
   color:#ff6b00;
   font-size:3em;
   text-align: center;
@@ -98,7 +98,7 @@
 
 .normal_text{
   color: #123C69;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-family: "Arial";
 }
 
@@ -151,15 +151,14 @@
 
 .circular_background_img {
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
-  margin-top: 15%;
-  margin-left: 10%;
+  width: 200px;
+  height: 200px;
   background-position:center;
   background-size:cover;
   padding: 10%
   background-color: white;
   transform: scale(1.3);
+  text-align: center;
 }
 
 .footer_end {
