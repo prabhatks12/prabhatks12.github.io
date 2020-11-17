@@ -1,6 +1,6 @@
 var i = 0;
-var txt = 'An aspiring data scientist and software developer , preferably working with startups !'
-var speed = 50;
+var txt = 'An aspiring data scientist and software developer , preferably working with startups ...'
+var speed = 60;
 
 // For typewriter effect on text
 function typeWriter() {
@@ -9,6 +9,13 @@ function typeWriter() {
         i++;
         setTimeout(typeWriter, speed);
     }
+    /*
+    else{
+    	i=0;
+    	document.getElementById("demo").innerHTML = "";
+    	this.typeWriter();
+    }
+    */
 }
 
 // For generating cricles on skills percentage

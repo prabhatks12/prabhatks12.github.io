@@ -1,9 +1,14 @@
+
+/* *********************************************    
+   *  BODY STYLE BACKGROUND
+   ********************************************* 
+*/
+
 .body_style{
-  /*background: #202020 ;*/
-  /* background: #b3b5b4; */
+  background: #FEFEFE ; 
   border-radius: 0px 0px 200px 0px;
   background-attachment: fixed;
-  background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)),url('../images/1.jpg'); 
+  /*background: linear-gradient(rgba(0,153,0,0.0), rgba(255,255,146,0.0)), url('../images/7.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -16,7 +21,8 @@
 
 .white_background_right{
  border-radius: 0px 200px 200px 0px;
- background: #FFF; 
+ background: linear-gradient(rgba(48,51,149,0.5),rgba(39,240,240,0.5));
+ /*90deg,rgba(210,11,84,0.8),rgba(255,255,146,0.8)*/
 }
 
 .white_background_bottom{
@@ -24,17 +30,62 @@
  background: #FFF; 
 }
 
+/* *********************************************    
+   *  FIRST ROW, ROUND BUTTONS
+   ********************************************* 
+*/
+
+.header_font{
+  width: 100%;  
+  right: 0;
+  text-align: right;
+}
+
+.header_font a{
+  text-decoration: none !important;  
+  color: #272727;
+  font-family: "Arial";
+  text-align: right;
+  font-size: 1.1em;
+}
+
+.button_round {
+  border-radius: 50px 50px 50px;
+  padding: 10px;
+  min-width: 10%;
+  border-color: #AC3B61;
+  color: white;
+}
+
+.button_round:hover{
+  background-color: white;
+  color: #272727;
+}
+
+.button_round_inverted {
+  border-radius: 50px 50px 50px;
+  padding: 10px;
+  min-width: 120px;
+  color: black;
+  border-color: white;
+}
+
+.button_round_inverted:hover{
+  background-color: white;
+  color: #272727;
+}
 
 /* *********************************************    
-   *  ALL TEXTS , BUTTONS AND FONTS
+   *  SECOND SECTION , TEXT
    ********************************************* 
 */
 
 .intro_text{
   margin-top: 5%;
-  font-family: Impact;
-  color:#ff6b00;
-  font-size:4em;
+  font-family: Andale;
+  color: #272727;  /* AC3B61 C3073F FFDF6C  F3D250  895061 17252A 303C6C*/
+  font-size: 4em;
+  width: 100%;
 }
 
 .heading_text{
@@ -46,63 +97,69 @@
 }
 
 .normal_text{
-  color: white;
-  font-size:1.3em;
+  color: #123C69;
+  font-size: 1.1em;
+  font-family: "Arial";
 }
 
-.button_round {
-  border-radius: 50px 50px 50px;
-  padding: 10px;
-  min-width: 150px;
-  border-color: white;
-  border: 2px solid white;
-  background-color: Transparent;
-}
-
-.button_round:hover{
-    background: white;
-    color: black;
-}
-
-.main_icons {
-  width: 50px;
-  height: 50px;
-  background-position:center;
-  background-size:cover;
-}
-.main_icons:hover{
-  -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-
-.main_icons_caption{
-  font-size: 20px;
-  color: white;
+.icons_div{
+  width: 50%;
   text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  margin-bottom: 10%;
 }
 
-.circular-img {
+
+.rotate_div { 
+  transform: rotate(-90deg);
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  bottom: 20%;
+  color: #123C69;
+  font-size: 1.1em;
+  font-family: "Arial";
+}
+
+
+
+
+/* *********************************************    
+   *  HEADER SECTION
+   ********************************************* 
+*/
+
+
+/* ****** Footer circular icons/images ****** */
+.circular-icons {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-position:center;
   background-size:cover;
 }
-.circular-img:hover{
+.circular-icons:hover{
   transform: scale(1.2);
 }
 
-.circular-background_img {
-  border-radius: 50px 50px 50px 50px;
+
+
+
+/* ****** Background circular images ****** */
+
+.circular_background_img {
+  border-radius: 50%;
   width: 250px;
   height: 250px;
   margin-top: 15%;
   margin-left: 10%;
   background-position:center;
   background-size:cover;
-}
-.background_img:hover{
-  transform: scale(1.2);
+  padding: 10%
+  background-color: white;
+  transform: scale(1.3);
 }
 
 .footer_end {
@@ -114,8 +171,8 @@
   font-size: 0.8em;
   bottom: 0;
   margin-top: auto;
-/*  background-color:#fff;
-*/}
+  background-color:#fff;
+}
 
 table, th, td {
   border: 1px solid black;
@@ -132,7 +189,7 @@ table, th, td {
 .card-block{
   background-color: #fff;
   border-style: solid;
-  /*background-position: center;*/
+  /*background-position: center;
   /*background-size: cover;*/
   /*transition: all 0.2s ease-in-out !important;*/
   margin-bottom: 20px;
