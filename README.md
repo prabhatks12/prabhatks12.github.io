@@ -7,3 +7,7 @@ To be completed
 4. reserach paper and internship details
 5. find a blog
 6. flask blueprints
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
