@@ -1,5 +1,31 @@
+Redemption:
+
 1. Revise everything form semester 1
 2. Revise everything from semester 2
 3. Cool projects for implementing everything for 1 and 2
-4. Only 1-2 courses for aws and azure (nothing more)
-5. Build a good portfolio
+4. Build a good portfolio - Done
+
+
+Project ideas:
+
+1. Image captioning
+2. OCR
+3. Time series training
+4. gan using time series to predict future
+5. backtracking and lstm model
+
+
+Know Poperly:
+
+1. RNN and LSTM
+2. GANs
+3. Neural Net working properly | https://www.youtube.com/watch?v=dPWYUELwIdM&ab_channel=freeCodeCamp.org
+4. Reinforcement learning
+5. Keras learning | https://www.youtube.com/watch?v=qFJeN9V1ZsI&ab_channel=freeCodeCamp.org
+
+Courses
+
+1. Mcrosoft Azure
+2. Amazon AWS
+3. ML career path
+4. AI career path

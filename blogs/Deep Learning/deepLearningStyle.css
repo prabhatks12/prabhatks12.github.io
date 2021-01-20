@@ -1,0 +1,46 @@
+.box {
+  background-color: #E8E8E8;
+  width: 90%;
+  border: 2px solid black;
+  margin: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+h2{
+	font-weight: bold;
+	color: red;
+}
+h3{
+	font-weight: bold;
+	color: blue;	
+}
+h4{
+	font-weight: bold;
+	color: green;	
+}
+h5{
+	font-weight: bold;
+	color: orange;	
+}
+div{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+iframe{
+	text-align: center;
+	width: 60%;
+	height: 50%;
+}
+img{
+	text-align: center;
+	width: 60%;
+	height: 80%;
+}
+.seeifimp{
+	color: orange;
+}
+.doubt{
+	color: purple;
+}

@@ -1,0 +1,391 @@
+<head>
+	<style>
+		.box {
+		  background-color: #E8E8E8;
+		  width: 90%;
+		  border: 2px solid black;
+		  margin: 20px;
+		  padding-top: 20px;
+		  padding-bottom: 20px;
+		  padding-left: 10px;
+		  padding-right: 10px;
+		}
+		h3{
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="text-align: left;">
+	I am writing all the techniques,tricks and examples which I felt important while studying python from <a href="https://www.udemy.com/course/learn-python-programming-and-cryptocurrency-data-analysis/">Python Programming Bootcamp (2019)</a>.
+	It's a nice course for begineers and its free too. Special thanks to the instructor <a href="https://www.udemy.com/user/b-adrian/">Bordeianu Adrian</a></div>
+	
+	<h3>1 . Comments :&nbsp;</h3><br>
+
+		<b>1.1</b> Single line comment starts with hash(#). Example :</div>
+
+		<div style="text-align: left;" class="box">
+			# First Program <br>
+			print("Hello World") <br>
+		</div>
+
+		<b>1.2</b> Multi line comments start with 3 double quotes ("""). Example:<br>
+		
+		<div style="text-align: left;" class="box">
+			"""<br>
+			First line<br>
+			Second line<br>
+			Third line<br>
+			"""<br>
+			print("Hello World")<br />
+		</div>
+
+
+	<h3>2. Swapping number usual vs Python trick:<br></h3>
+
+		Usually we use temporary variable for swapping or we use addition and subtraction but in python its just a single line statement.
+
+		<div style="text-align: left;" class="box">
+			# Swap using temp <br>
+			a=10	<br>
+			b=20	<br>
+			temp=a 	<br>
+			a=b 	<br>
+			b=temp 	<br><br>
+
+			# Addition and subtraction method <br>
+			a=10 	<br>
+			b=20	<br>
+			a=a+b # a=30 <br>
+			b=a-b # b=30-20=10 <br>
+			a=a-b # a=30-10=20 <br><br>
+
+			# In python , it is <br>
+			a=10 <br>
+			b=20 <br>
+			a,b=b,a # Single line <br>
+		</div>
+
+	<h3>3. String Opertaions: <br></h3>
+
+		<b>3.1</b> String slicing : It is one of the most commonly performed method.It's in the format of string_var[ start:end:interval]
+
+		<div style="text-align: left;" class="box">
+			statement="I love python , Its the best language" <br>
+			print(statement[3:5])	# Output : ov , 5th index is not included <br><br>
+			print(statement[3:10:2]) # Output : oept , interval is set to 2 , so every second character is included <br><br>
+
+			#for next line use \ . Example <br>
+
+			new_string_var=statement[3:4] + statement[1:6] + statement[2:4] \  <br>
+						   + statement[4:7] # next line <br>
+ 		</div>
+
+		<b>3.2</b> Other useful string operation :<br><br>
+
+		<i>find("substring") :</i> Finding a charcter or substring in a given string. It returns the position if found else it returns -1. <br><br>
+
+		<i>count("substring") :</i> Counts the number of times a substring is repeated. <br><br>
+
+		<i>split() : </i> splits a string to make a list of substrings. The parameter specifies on what basis it will be split. <br><br>
+		
+		<i> replace( replace_this , with_this) : </i> replaces the first parameter with second. <br>
+
+		<div style="text-align: left;" class="box">
+			#continuing the above example:	<br>
+			print(statement.find("python")) # 7 <br>
+			print(statement.find("ipython")) #-1 <br><br>
+			
+			print(statement.count("I")) # 1 <br>
+			print(statement.count("i")) # 0 : Case sensitive <br><br>
+
+			print(statement.split("I")) # ['','love python,','ts the best language] <br><br>
+
+			print(statement.replace("I","i")) # replaces all "I" with "i" <br>
+		</div>
+
+	<h3>4. Type casting and type() :<br></h3>
+
+		Type casting means changing the datatype of any variable. Its much easier in Python compared to java and c++.
+
+		<div style="text-align: left;" class="box">
+			# finding the datatype	<br>
+			a=10 <br> 
+			b="s" <br>
+			print(type(b)) # < class : str > <br><br>
+
+			# typecasting ,changing int to str<br>
+			string_a=str(a) <br><br>
+		
+			# typecasting ,changing str to int<br>
+			c="10" <br>
+			int_c=int(c) # remember 10 is a number so typecasting worked. if c=" abc" ,then it will show error <br>
+		</div>
+
+	<h3>5. List and operations on list :<br></h3>
+
+		List is a mutable object and the size is flexible. See the example to understand some basic list operation.
+		Note : Sorting can be performed on both integer list and string list but not on a list which is a  combination of str and int.
+
+		<div style="text-align: left;" class="box">
+			a=[1,2,3,4,5,6,7] <br><br>
+			
+			# list slicing is same as string slicing <br>
+			print(a[::-2]) # output : [7,5,3,1] <br>
+   			print(a[::0])  # ValueError: slice step cannot be zero <br><br>
+
+   			# add items to list    <br>
+   			a.append(10) <br>
+   			a.append("String") #[1, 2, 3, 4, 5, 6, 7, 10,'String'] <br><br>                                                                                         
+   			# add on a give position <br>
+   			a.insert(0,14)	<br><br>
+
+   			# removing element by its value <br>
+   			a.remove(10) <br><br>
+
+   			# deleting element by position <br>
+   			del a[1] <br><br>
+
+   			# delete the last element and also see its value ,but list doesnt have any method called push.<br>
+   			print(a.pop()) #[14, 2, 3, 4, 5, 6, 7] <br><br> 
+
+			# min max <br>
+			print(min(a),max(a)) <br><br>
+
+			# sorting list <br>
+			a.sort() # inc order <br>
+			a.sort(reverse=True) # dec order    <br> 
+			a.reverse() # reverse the list, it is not sorting  <br><br> 
+
+			b = ["a","b","c","abc","ab","ac","abcd"] <br><br>
+
+			#sorting acc to length of string ---important---<br>
+			result=list(sorted(b,key=len)) # output : ['a', 'b', 'c', 'ab', 'ac', 'abc', 'abcd'] <br><br>                                                                                   
+			</div>
+
+	<h3>6. Dictionary, tuples and sets :<br></h3>
+
+		<b>Dictionary :</b> is a key value pair. The key must be unique but values can be same for different keys.<b>Dictionary are mutable and doesn't preserve the order</b>.
+		
+		<div style="text-align: left;" class="box">		
+			dic={"key1":"apple","key2":"mango",1:2} <br>
+			print(dic["key1"]) # Output : apple <br> <br>
+
+			print(dic.keys())  # Output : dict_keys([1, 'key1', 'key2']) <br>                            
+			print(dic.values()) # Output : dict_values([2, 'apple', 'mango'])  <br><br>                          
+			
+			dic["key3"]="banana" <br>
+			print(dic) # Output : {1: 2, 'key3': 'banana', 'key1': 'apple', 'key2': 'mango'}  <br><br> 
+			del dic["key1"] <br>
+			print(dic) # Output : {1: 2, 'key3': 'banana', 'key2': 'mango'}   <br>                 		
+		</div>	
+
+		<b>Trick :</b> Setting default values while retriving items from dictionary.
+
+		<div style="text-align: left;" class="box">		
+			# aim : to read the number of times each character is repeated. <br>
+			string = "Hello , I am writing this statement for a cool trick and blah blah blah" <br><br>
+			character={} <br>
+			for char in string: <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;character[char]=character.get(char,0)+1
+			<br> # if there is no count for a particular character from the above string then a value =0 will be initialised. Otherwise it will return null which creates error. <br><br>
+			print(character) <br>	
+		</div>	
+
+		<b>Tuple :</b> is immutable which means you can't change its value. Its usefull when you want to read something quickly and don't want to change the value.<b> <br>In the example given below, allthough we can't change the value inside the tuple but we can change the value of the list which is inside the tuple.Cool trick.</b>
+
+		<div style="text-align: left;" class="box">	
+			tup=(1,2,3,4,[1,2,3]) <br>
+			print(tup) # (1, 2, 3, 4, [1, 2, 3]) <br><br>                                     
+
+			tup[4].append(5) <br>
+			print(tup) # (1, 2, 3, 4, [1, 2, 3, 5]) <br>                                   
+		</div>	
+
+		<b>Set :</b> is mutable and doesn't allow dublicates. It also does not preserve the order.
+		<div style="text-align: left;" class="box">	
+			_set={1,23,35,35,46,55,55} <br>
+			print(_set) # {23, 1, 35, 46, 55} <br><br>
+			
+			_set.add(100) # adding element <br>
+			print(_set) # {1, 35, 100, 46, 23, 55} <br><br>
+
+			_set.remove(1) <br>
+			print(_set) # {35, 100, 46, 23, 55} <br><br>
+			print(_set.pop()) # 35 <br>
+		</div>
+
+	<h3>7. Find top 3 max numbers :<br></h3>
+
+		Simple and efficient code to find top 3 maximum values from the list with just one loop.
+		<div style="text-align: left;" class="box">
+		l=[1,5,6,67,98,68,56,423,343] <br><br>
+		a=b=c=min(l) <br><br>
+		for i in l: <br>
+		&nbsp;&nbsp;&nbsp;&nbsp;if(i>a):<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c=b <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b=a <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=i <br><br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;elif(i>b): <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c=b <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b=i <br><br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;elif(i>c): <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c=i <br><br>
+		print(a,b,c)        
+		</div>	
+
+	<h3>8. Finding common elements in 2 lists like a pro: <br></h3>
+		
+		There are three methods to solve this question.
+		<div style="text-align: left;" class="box">
+			l1=[1,3,4,5,6,67,98,68,56,423,343] <br>
+			l2=[3,4,56,35] <br>
+			# method 1
+			result=[] <br>
+			for i in l1: <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;if(i in l2): <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.append(i) <br>
+			print(result) <br><br>       
+			
+			# method 2
+			print([i for i in l1 if i in l2]) <br><br>
+
+			# method 3 ---important and somthing new--- <br>
+			res=set(l1) & set(l2) <br>
+			print(res)<br>
+		</div>
+
+	<h3>9. Removing None value (Trick) <br></h3>
+		
+		<div style="text-align: left;" class="box">
+			l=[1,2,3,None,4,5,6] <br><br>
+			new_l=[ int(i or 0) for i in l ] # i or 0 initialize a defalut value 0 if i cannot be typecast to int <br>
+			print(new_l) <br>
+		</div>	
+
+	<h3>10. Yield vs Return (Trick) <br></h3>
+
+		Yield temporarily suspends the execution to send the value back to the caller statement but it stores enough data to start execution again from the point where it stopped. The yield statement is mainly used when defining a generator function.<br>
+		Whereas return gets executed only once and anything written after return inside a function will not be executed.
+		
+		<div style="text-align: left;" class="box">
+			def fun_1(): <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;yield "a" <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;yield "b" <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;yield "c" <br><br> 
+			    
+			def fun_2(): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;return "a" <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;return "b" <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;return "c" <br><br>
+
+			print(list(fun_1())) # Output ["a","b","c"]<br>
+			print(list(fun_2()) # Output ["a"] <br> 
+		</div>
+
+	<h3>11. Default value in function <br></h3>
+
+		For default values, assign the values inside the parameter of function definition.
+
+		<div style="text-align: left;" class="box">
+			def fun_1(a=1,b=2): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;return a+b,a-b <br>
+			print(fun_1()) <br>
+		</div>
+
+	<h3>12. Global values <br></h3>	
+
+		Values which can be accessed anywhere inside the program are global variables.
+
+		<div style="text-align: left;" class="box">
+		a=10 <br>
+		def fun(): <br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;a=3 <br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;print(a) <br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;print(globals()["a"]) <br>
+		fun()			
+		</div>	
+
+	<h3>13. Accessing local function inside a function using global keyword (Trick) <br></h3>	
+
+		A function inside a function is local to the first function and cannot be accessed directly from outside. See the given example to understand it.
+
+		<div style="text-align: left;" class="box">
+		def fun(): <br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;def fun2(): <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return " my world" <br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;return "welcome to" + fun2() <br><br>
+		print(fun()) # welcome to my world <br>
+		print(fun2()) # Nameerror :name 'fun2' is not defined <br><br>
+
+		# adding global keyword , don't use () after function name and use it just above the function definition <br><br>
+
+		def fun(): <br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;global fun2 <br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;def fun2(): <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return " my world" <br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;return "welcome to" + fun2() <br>
+
+		</div>
+
+	<h3>14. Lambda inseted of functions <br></h3>
+	
+		For small functions , use lambda insted of function. See example to understand how it works.	
+
+		<div style="text-align: left;" class="box">
+	
+		def fun_1(a,b): <br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;return a+b <br>
+		print(fun_1(2,3)) # Output : 5 <br><br>
+		lam_1=lambda a,b: a+b <br>
+		# name of lambda varibale is lam_1, its parameters are a,b and definition is written after : <br>
+		print(lam_1(2,3)) <br>
+		</div>
+	
+    <h3>15. Map function </h3>
+	
+    Map function executes a specified function for each item in iterable. Syntax : map(function,iterable)
+
+    <div style="text-align: left;" class="box">    	
+		l=[1,2,3,4,5,6] <br>
+		res=list(map(lambda a: a*a,l)) <br>
+		print(res) <br>
+    </div>
+
+	<h3>16. Reduce function <br></h3>
+	
+    Unlike map , reduce needs a two parametrs function which will be working on the iterable. The syntax is reduce(function, iterable[, initial]) , initial is not copulsory to pe included in the definition. Also, it returns a single value. Also, don't forget to import it from functools.
+
+    <div style="text-align: left;" class="box">    	
+		from functools import reduce <br>
+
+		l=[1,2,3,4,5,6] <br>
+
+		res=reduce(lambda a,b: a+b,l) # a,b two parameters <br>
+		print(res) # 21 <br>
+    </div>
+
+    <h3>17. Filter function <br></h3> 
+
+    Filter function works on boolean data and remove evrything which is false
+
+    <div style="text-align: left;" class="box">
+	    l=[1,2,3,4,5,6] <br><br>
+		res=list(filter(lambda a: a>=5,l)) # whatever is less than equal to 5 is false, thus filtered<br>
+		print(res) # [5,6] <br>    	
+    </div>
+
+    <h3>18. Assert statement <br></h3> 
+
+    Assert is mainly used for debugging. An assert statement will do nothing if the condition is true but throws an AssertionError exception as soon as it becomes false.
+    <div style="text-align: left;" class="box">
+    	num=4 <br>
+	    assert num>5 , "Number has to be greater than 5" <br> 
+	    # AssertionError: Number has to be greater than 5	<br>
+    </div>
+
+
+
+
+</body>
