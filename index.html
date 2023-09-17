@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=ZCOOL XiaoWei' rel='stylesheet'>
 </head>
 
 <body  onload="typeWriter()" class="body_style">
@@ -22,58 +23,74 @@
 *************************************************************************
 -->
 
-<div class="container col-md-12 col-sm-12 col-lg-12 col-xl-12" style="margin-top: 2%;width: 100%;">
+<!--  NAVBAR SECTION -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
+	<a class="navbar-brand" href="index.html"><h4 style="font-family: 'ZCOOL XiaoWei' ;"><b>prabhat.io</b></h4></a>
 
-	<div class="header_font">	
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+    </button>
 
-		<a href="#projectSection">Projects</a>
-		&nbsp; 
+	<div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
 
-		<a href="http://imprabhat12.blogspot.com/">Blogs</a>
-		&nbsp;  
+			<li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
 
-		<a href="#expSection">Experience</a>
-		&nbsp;  
+			<li class="nav-item">
+                <a class="nav-link" href="pages/experience.html">Experience</a>
+            </li>
 
-		<a href="learningGoals.html">Learning</a>
-		&nbsp;  
+			<li class="nav-item">
+                <a class="nav-link" href="#">Portfolio</a>
+            </li>
 
-		<button class="button_round normal_text" onclick="location.href = '#skillSection'"><h7 style="color:#FFF;">Show Skills</h7></button>
-		
-	</div>
-</div>
+			<li class="nav-item">
+				<a class="nav-link" href="http://imprabhat12.blogspot.com/">Blogs</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 
 <br>
 
-<div class="col-12 row" style="position: relative; height: 100%; max-width: 100%;">
+<div class="row" style="position: relative; height: 100%; max-width: 100%;">
 
 
-		<div class="col-2 col-md-2 col-sm-2 col-lg-2 col-xl-2" style="position: relative;">
-			
-			<div class="icons_div">
-				<a href="https://github.com/prabhatks12"><img src="icons/github.jpg" class="circular-icons" /></a>
-				<br><br>
-
-				<a href="https://www.linkedin.com/in/prabhatkumarsingh12/"><img src="icons/linkedin.png" class="circular-icons" /></a>
-				<br><br>
-				
-				<a href="https://www.kaggle.com/prabhat12"><img src="icons/kaggle.jpg" class="circular-icons" /></a>
-				<br><br>
-
-				<a href="https://www.hackerearth.com/@Prabhatks"><img src="icons/hackerearth.png" class="circular-icons" /></a>
-			</div>
+		<div class="col-2 col-md-2 col-sm-2 col-lg-2 col-xl-2" style="position: relative;">			
 		</div>
 		
 		<div class="col-9 col-md-9 col-sm-9 col-lg-9 col-xl-9">		
 		
 			<div class="col-10 center_vertical" style="position: relative; height: 100%;margin-right: 10%;">			
-				<p class="intro_text"><b>Hello! <br> I' m prabhat, <br>I like developing stuff..</b></p>
-				<p class="normal_text" id="demo"></p>
+				<p class="intro_text"><b>Hello! <br> i' m prabhat, <br>i like developing stuff..</b></p>
+				<p class="normal_text" id="typing_script_effect"></p>
 				
 				<br>
-				<div class="row">
-					<button class="button_round normal_text" onclick="location.href= 'resume/Prabhat_resume.pdf'"> <h7 style="color:#FFF;">Download Resume</h7></button>
+				<div class="row no-gutters">
+					
+					<div class="col-md-4">
+						<button class="button_round normal_text" onclick="location.href= 'resume/Prabhat_resume.pdf'"> <h7 style="color:#FFF;">Download Resume</h7></button>
+					</div>
+	
+					<div class="col-md-4">
+						<a href="https://www.linkedin.com/in/prabhatkumarsingh12/"><img src="icons/linkedin.png" class="circular-icons" /></a>
+						&nbsp; &nbsp;
+					
+						<a href="https://www.kaggle.com/prabhat12"><img src="icons/kaggle.jpg" class="circular-icons" /></a>
+						&nbsp; &nbsp;
+						
+						<a href="https://github.com/prabhatks12"><img src="icons/github.jpg" class="circular-icons" /></a>
+						&nbsp; &nbsp;
+					</div>	
+					<div class="col-md-4"></div>
+					<!-- <a href="https://www.hackerearth.com/@Prabhatks"><img src="icons/hackerearth.png" class="circular-icons" /></a>&nbsp; &nbsp; -->
 				</div>
 					
 			</div>	
@@ -87,317 +104,6 @@
 <div style="min-height: 200px"></div>
 
 
-<div class="container-fluid col-12" style="position: relative; height: 100%;text-align: center;">
-
-		<div class="col-1 col-md-1 col-sm-1 col-lg-2 col-xl-1"></div>
-		
-		<div class="row">	
-			
-			<p class="heading_text" style="margin-bottom: 10%;">About me</p>		
-
-			<div class="col-md-5 col-sm-5 col-lg-5 col-xl-5 center_vertical" style="text-align: center;">	
-					<img src="images/me2.jpg" class="circular_background_img">
-			</div>
-			<div class="col-md-5 col-sm-5 col-lg-5 col-xl-5 normal_text" style="text-align: center; min-width: 50%;">	
-				<br>
-				Hi, I am currently pursuing my master's degree in Artificial intelligence from RMIT University. I am very keen on programming and love to explore new places and increase my network. I like attending hackathons and tech events too. My aim is to be a knowledgable person in my field and to be an excellent programmer. 
-			</div>
-
-		</div>
-
-		<div class="col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1"></div>
-</div>
-
-
-<div style="min-height: 200px"></div>
-
-
-<!-- 
-*************************************************************************
-*************************************************************************
-*
-*	2. PROJECTS SECTION   
-*
-*************************************************************************
-*************************************************************************
--->
-
-
-<div class="col-12 multicolor_background_right" id="projectSection" style="width: 100%;">
-
-<div class="row">
-	<div class="col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1"> </div>
-
-	<div class="col-10 col-md-10 col-sm-10 col-lg-10 col-xl-10">
-
-		<p class="heading_text" style="color: #272727; text-align: center;"> Some of my work </p>		
-
-		<!-- scrolling-wrapper row flex-row flex-nowrap -->
-		<div class="row">
-
-			<!-- ****************  1. Sentimental analysis **************** -->
-
-			<div class="card-block" style="width:300px">				
-				<div class="card-header"><h5>Sentimental Analysis on Video</h5></div>				
-				<div class="card-img-top">
-					<video width="300" height="200" controls>
-					  <source src="videos/output.mp4" type="video/mp4">
-					  Your browser does not support the video tag.
-					</video>
-				</div>				
-				<div class="card-body" style="border: 2px bold;background-color: #fff;">				
-					A model is trained on various facial sentiments using Keras Sequential model and the results are added to a given video.
-				</div>
-				
-			</div>
-			&nbsp; &nbsp;&nbsp; &nbsp;  
-				
-
-			<!-- ****************  2. Face Recognition **************** -->
-
-			<div class="card-block" style="width:300px">
-				<div class="card-header"><h5> Face Recognition</h5></div>
-				<div class="card-img-top"><img src="images/face_recognition.png" width="300px" height="200px"></div>
-				<div class="card-body">			
-					I learned about finding face landmarks, creating our own filters, face comparison based on 128 encoding values, and a bit about face swap. using the face_recognition library.				
-				</div>
-			</div>
-			&nbsp; &nbsp; &nbsp; &nbsp; 
-				
-
-			<!-- ****************  3. Medical Cost Personal **************** -->
-			
-			<div class="card-block" style="width:300px">
-				<div class="card-header"><h5> Medical Cost Personal</h5></div>
-				<div class="card-img-top"><img src="images/medical_cost_personal.png" width="300px" height="200px"></div>
-				<div class="card-body">			
-					The project includes general attributes affecting high and low bills from hospitals. Two new things that I learned from this project are the Spearman correlation technique and adding Polynomial features to regression.		
-				</div>
-			</div>		
-			&nbsp; &nbsp; &nbsp; &nbsp; 
-
-			
-			<!-- ****************  4. Image classification using Keras **************** -->
-
-			<div class="card-block" style="width:300px;">
-
-				<div class="card-header"><h5> Image classification using Keras</h5></div>
-				<div class="card-img-top"><img src="images/fruits_recognition.png" width="300px" height="200px">
-				</div>
-				<div class="card-body">			
-					The project aimed to classify the fruits dataset containing labeled images of fruits. Keras sequential model is used to predict the labels of test images. 
-				</div>
-			</div>
-
-		</div>	
-		<br><br><br><br><br><br>
-	</div>
-
-	<div class="col-1"> </div>
-</div>
-</div>
-
-
-
-
-<!-- 
-*************************************************************************
-*************************************************************************
-*
-*	EXPERIENCE SECTION
-*   
-*************************************************************************
-*************************************************************************
--->
-
-<div style="min-height: 200px"></div>
-
-<div class="col-12 row" id="expSection">
-
-	<div class="col-1"> </div>
-
-	<div class="col-10">
-
-		<p class="heading_text"> Experience </p>		
-		<br><br>
-
-		<div class="timeline">
-
-			<!-- ****************  1. AI Australia **************** -->
-
-		  	<div class="container left">
-		    	<div class="content">
-		      		<h2>AI Australia (Data Scientist)</h2>
-		      		<h7>Aug 2020 - Present</h7><br><br>
-		      		<p> Worked on various AI related excited projects like lip reading.</p>
-		    	</div>
-		  	</div>
-
-			<!-- ****************  2. Mimyk **************** -->
-
-		  	<div class="container right">
-			    <div class="content">
-			        <h2>Mimyk</h2>
-			        <h7>Jul 2019 - Jan 2020</h7><br><br>
-			        <p>The product which I was working on deals with endoscopy simulation, user interface and connectivity between both. I worked on the architecture of the product which involves flask and websockets and also on the user interface side which includes writing html, css and javascript code.</p>
-			    </div>
-		  	</div>
-
-			<!-- ****************  3. JetGlobo Technologies **************** -->
-
-	  		<div class="container left">
-			    <div class="content">
-			      	<h2>JetGlobo Technologies</h2>
-			      	<h7>Jul 2018 - Sep 2018</h7><br><br>
-			      	<p>My work in this startup mainly includes developing app related to aviation industry news, flight timings and offers from different companies for passengers . I developed the app from scratch so that they can get initial fundings.</p>
-		     	</div>
-	      	</div>
-
-			<!-- ****************  4. Mr Hot Foods Pvt Ltd **************** -->
-
-			<div class="container right">
-			    <div class="content">
-			        <h2>Mr Hot Foods Pvt Ltd</h2>
-			  	    <h7>Aug 2017 - Sep 2017</h7><br><br>
-	    		    <p>Its a good startup which provides tiffin services. It involves both consumer and local restaurants. I mainly worked on the android app for the vendor side. My work includes changing the interface, fixing major bugs and also publishing it on the app store.</p>
-			    </div>
-		    </div>	      
-      	
-      	</div> 
-	</div>
-
-	<div class="col-1"> </div>
-</div>
-
-
-
-<!-- 
-*************************************************************************
-*************************************************************************
-*	
-*	SKILLS PERCENTAGE SECTION  
-* 
-*************************************************************************
-*************************************************************************
--->
-
-
-<div style="min-height: 100px"></div>
-
-<div class="col-12 row" id="skillSection">
-
-	<div class="col-1"> </div>
-
-	<div class="col-10">
-
-		<p class="heading_text"> Skills Percentage </p>
-		<br><br>
-
-		<!-- ****************  First row ************* -->	
-
-		<div class="row">
-
-			<!-- ****************  Skill: Java **************** -->
-
-			<div class="percent">
-			  <svg id="javaPerCircle">
-			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
-			  </svg>
-			  <script>setPercentageCircle(90,'javaPerCircle');</script>
-			  <div class="number">
-			    <h2>90<span>%</span></h2>
-			  </div>			  
-			  <br><br><h4 class="normal_text" style="text-align: center;"> Java </h4><br><br>
-			</div>
-			&nbsp; &nbsp; &nbsp; &nbsp;
-
-
-			<!-- ****************  Skill: Python **************** -->
-
-			<div class="percent">
-			  <svg id="pythonPerCircle">
-			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
-			  </svg>
-			  <script>setPercentageCircle(75,'pythonPerCircle');</script>
-			  <div class="number">
-			    <h2>75<span>%</span></h2>
-			  </div>
-			  <br><br><h4 class="normal_text" style="text-align: center;"> Python </h4><br><br>
-			</div>
-			&nbsp; &nbsp; &nbsp; &nbsp;<br><br>
-			
-			<!-- ****************  Skill: AI **************** -->
-
-			<div class="percent">
-			  <svg id="aiPerCircle">
-			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
-			  </svg>
-			  <script>setPercentageCircle(65,'aiPerCircle');</script>
-			  <div class="number">
-			    <h2>65<span>%</span></h2>
-			  </div>
-			  <br><br><h4 class="normal_text" style="text-align: center;"> Artificial Intelligence </h4> <br><br>
-			</div>
-			&nbsp; &nbsp; &nbsp; &nbsp;<br><br>
-
-			<!-- ****************  Skill: Git **************** -->
-
-			<div class="percent">
-			  <svg id="gitPerCircle">
-			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
-			  </svg>
-			  <script>setPercentageCircle(50,'gitPerCircle');</script>
-			  <div class="number">
-			    <h2>50<span>%</span></h2>
-			  </div>
-			  <br><br><h4 class="normal_text" style="text-align: center;"> Github </h4> <br><br>
-			</div>
-			&nbsp; &nbsp; &nbsp; &nbsp;
-			<br><br>
-
-			<!-- ****************  Skill: HTML,JS,CSS **************** -->
-
-			<div class="percent">
-			  <svg id="htmlPerCircle">
-			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
-			  </svg>
-			  <script>setPercentageCircle(60,'htmlPerCircle');</script>
-			  <div class="number">
-			    <h2>60<span>%</span></h2>
-			  </div>
-			  <br><br><h4 class="normal_text" style="text-align: center;"> HTML, JS, CSS </h4> <br><br>
-			</div>
-			&nbsp; &nbsp; &nbsp; &nbsp;
-			<br><br>
-
-			<!-- ****************  Skill: Team Player **************** -->
-
-			<div class="percent">
-			  <svg id="teamPlayerPerCircle">
-			    <circle cx="70" cy="70" r="70"></circle> <circle cx="70" cy="70" r="70"></circle>
-			  </svg>
-			  <script>setPercentageCircle(100,'teamPlayerPerCircle');</script>
-			  <div class="number">
-			    <h2>100<span>%</span></h2>
-			  </div>
-			  <br><br><h4 class="normal_text" style="text-align: center;"> Team Player </h4> <br><br>
-			</div>
-			<br><br>
-
-		</div>		
-		<br><br>
-
-	</div>
-
-	<div class="col-1"> </div>
-	
-</div>
-
-
-<div class="">
-	
-
-</div>
 
 <!-- 
 *************************************************************************
@@ -409,39 +115,33 @@
 *************************************************************************
 -->
 
-<div style="min-height: 100px;"></div>
 
-<div class="connect_section">
-	<br><br><p> Let's connect and get some work done</p><br><br>
-
-</div>
-
-
-<div class="col-12 footer_end" style="min-height: 100%">
-	<br><br>
-	
-	<a href="https://github.com/prabhatks12"><img src="icons/github.jpg" class="circular-icons" /></a>
-	&nbsp; &nbsp;
-	
-	<a href="https://www.linkedin.com/in/prabhatkumarsingh12/"><img src="icons/linkedin.png" class="circular-icons" /></a>
-	&nbsp; &nbsp;
-	
-	<a href="https://www.kaggle.com/prabhat12"><img src="icons/kaggle.jpg" class="circular-icons" /></a>&nbsp; &nbsp;
-	
-	<a href="https://www.hackerearth.com/@Prabhatks"><img src="icons/hackerearth.png" class="circular-icons" /></a>&nbsp; &nbsp;
-	<br><br>
-
-	<h6 style="color: white;">imprabhat12@gmail.com</h6>
-	<br>
-</div>
-
+<footer class="footer_end mt-5">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h6>Let's connect and get some work done ..</h6>
+				<br>
+                <p>Contact Info <br>Email: <a href="mailto:imprabhat12@gmail.com" style="color: white;">imprabhat12@gmail.com</a><br>Address: Melbourne Australia</p>
+            </div>
+            <div class="col-md-6">
+                <h7>Useful Links</h7>
+                <ul class="list-unstyled">
+                    <li><a href="https://github.com/prabhatks12" style="color: white;">Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/prabhatkumarsingh12/" style="color: white;">LinkedIn</a></li>
+                    <li><a href="https://www.kaggle.com/prabhat12" style="color: white;">Kaggle</a></li>
+                    <li><a href="#" style="color: white;">Learning</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
 <div style="min-height: 50px; background-color: #111011; text-align: center; color: white;">
 	<br>Made by Prabhat with &#128147;<br><br>
 
 </div>
-
 
 </body>
 </html>

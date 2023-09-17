@@ -1,11 +1,11 @@
 var i = 0;
-var txt = 'An aspiring data scientist and software developer , preferably working with startups ...'
+var txt = 'Training data today, shaping the future tomorrow ...'
 var speed = 60;
 
 // For typewriter effect on text
 function typeWriter() {
     if (i < txt.length) {
-        document.getElementById("demo").innerHTML += txt.charAt(i);
+        document.getElementById("typing_script_effect").innerHTML += txt.charAt(i);
         i++;
         setTimeout(typeWriter, speed);
     }
