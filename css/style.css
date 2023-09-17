@@ -139,10 +139,9 @@
 /* ****** Footer circular icons/images ****** */
 .circular-icons {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  background-position:center;
-  background-size:cover;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
 }
 .circular-icons:hover{
   transform: scale(1.2);
@@ -172,7 +171,6 @@
   height: 200px;
   background-position:center;
   background-size:cover;
-  padding: 10%;
   background-color: white;
   transform: scale(1.3);
   text-align: center;
@@ -250,7 +248,7 @@ svg circle:nth-child(1){
 
 /* second child: inner circle */
 svg circle:nth-child(2){
-  stroke: #C179F3;
+  stroke: #4d848c;
 }
 
 /* inside circle */
@@ -260,7 +258,7 @@ svg circle:nth-child(2){
   height: 150px;
   border-radius: 50%;
   box-shadow: inset 0 0 50px #000;
-  background: #272727;
+  background: #616060;
   z-index: 1000;
   margin-bottom: 100px;
 }
